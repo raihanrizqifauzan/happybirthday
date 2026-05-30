@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+  background: #f5e6f0;
+  min-height: 100dvh;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(145deg, #ffe8f0 0%, #f5e6ff 50%, #e8f0ff 100%);
+  background-attachment: fixed;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: 420px;
+  min-height: 100dvh;
+  position: relative;
+  background: linear-gradient(170deg, #fff5fb 0%, #f8f0ff 55%, #f0f5ff 100%);
+  overflow-x: hidden;
+  box-shadow: 0 0 80px rgba(220, 120, 180, 0.15);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255, 150, 200, 0.35); border-radius: 2px; }
+
+/* Custom keyframes */
+@keyframes heartFloat {
+  0%   { transform: translateY(0) scale(0.5) rotate(-10deg); opacity: 0.9; }
+  100% { transform: translateY(-110vh) scale(1) rotate(15deg); opacity: 0; }
+}
+
+@keyframes sparkleAnim {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50%       { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+@keyframes floatBounce {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 12px rgba(255, 100, 160, 0.3); }
+  50%       { box-shadow: 0 0 30px rgba(255, 100, 160, 0.65); }
+}
+
+@keyframes confettiBurst {
+  0%   { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+  100% { opacity: 0; transform: translate(var(--tx), var(--ty)) rotate(var(--rot)) scale(0.3); }
+}
+
+.float-bounce  { animation: floatBounce 2.4s ease-in-out infinite; }
+.sparkle-elem  { animation: sparkleAnim 2.2s ease-in-out infinite; }
+.pulse-glow    { animation: pulseGlow 2s ease-in-out infinite; }
