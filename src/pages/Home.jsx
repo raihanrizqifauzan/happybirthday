@@ -373,7 +373,7 @@ export default function Home({ giftOpened = false, onGiftOpen = () => {} }) {
                 className="text-center py-2"
               >
                 <p className="text-pink-300 text-xs font-semibold">
-                  dari Raihan — yang berantakan tapi sayang kamu 💕
+                  dari Raihan — yang comell hehehe 💕
                 </p>
               </ScrollCard>
             </motion.div>

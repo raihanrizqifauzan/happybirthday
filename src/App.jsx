@@ -1,16 +1,23 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import LockScreen from './components/LockScreen'
+import Countdown from './components/Countdown'
 import BottomNav from './components/BottomNav'
 import FloatingHearts from './components/FloatingHearts'
 import Home from './pages/Home'
 import Music from './pages/Music'
 import Gallery from './pages/Gallery'
 
+const BIRTHDAY = new Date('2026-06-05T00:00:00+07:00')
+
 const SONG_SRC = '/assets/music/lagu.mp3'
 const SONG_DURATION_SECS = 238
 
 export default function App() {
+  // false = masih countdown, true = sudah boleh lanjut ke lock/home
+  const [countdownDone, setCountdownDone] = useState(
+    () => Date.now() >= BIRTHDAY.getTime()
+  )
   const [isUnlocked, setIsUnlocked] = useState(
     () => localStorage.getItem('hbd_unlocked') === 'true'
   )
@@ -98,9 +105,21 @@ export default function App() {
       <FloatingHearts />
 
       <AnimatePresence mode="wait">
-        {!isUnlocked ? (
+        {/* ── COUNTDOWN — sebelum tanggal 5 Juni WIB ── */}
+        {!countdownDone ? (
+          <motion.div
+            key="countdown"
+            exit={{ opacity: 0, scale: 1.05, filter: 'blur(6px)' }}
+            transition={{ duration: 0.6 }}
+          >
+            <Countdown onComplete={() => setCountdownDone(true)} />
+          </motion.div>
+
+        ) : !isUnlocked ? (
           <motion.div
             key="lock"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 1.04, filter: 'blur(4px)' }}
             transition={{ duration: 0.5 }}
           >
