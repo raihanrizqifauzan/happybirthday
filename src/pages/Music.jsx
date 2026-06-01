@@ -172,7 +172,7 @@ export default function Music({
           <span>💜</span> Kenapa lagu ini?
         </h3>
         <p className="text-gray-600 text-sm leading-relaxed mb-3">
-          Jadi ceritanya aku lagi dengerin playlist random, terus lagu ini muncul — dan langsung
+          Jadi ceritanya Aku lagi dengerin playlist dari beberapa album salah satu band kesukaan , yaitu Neck Deep. Terus lagu ini muncul — dan langsung
           nyantol gitu di kepala. <em>"What Took You So Long"</em> tuh basically nanya,
           "kemana aja sih kamu, kok baru sekarang datengnya?"
         </p>
