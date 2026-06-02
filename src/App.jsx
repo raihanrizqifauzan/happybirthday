@@ -145,7 +145,7 @@ export default function App() {
               </motion.div>
             </AnimatePresence>
 
-            <BottomNav current={page} onChange={setPage} />
+            <BottomNav current={page} onChange={setPage} giftOpened={giftOpened} />
           </motion.div>
         )}
       </AnimatePresence>

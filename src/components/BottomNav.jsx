@@ -2,15 +2,13 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const TABS = [
-  { id: 'music',   emoji: '🎵', label: ''   },
-  { id: 'home',    emoji: '🏠', label: ''    },
-  { id: 'gallery', emoji: '📸', label: '' },
+  { id: 'music',   emoji: '🎵', label: 'Musik'   },
+  { id: 'home',    emoji: '🏠', label: 'Home'    },
+  { id: 'gallery', emoji: '📸', label: 'Gallery' },
 ]
 
-export default function BottomNav({ current, onChange }) {
+export default function BottomNav({ current, onChange, giftOpened }) {
   return (
-    // Outer div: handles CSS fixed + center positioning — no Framer Motion here
-    // so translateX(-50%) is never overwritten by motion transforms
     <div
       style={{
         position: 'fixed',
@@ -22,7 +20,6 @@ export default function BottomNav({ current, onChange }) {
         zIndex: 50,
       }}
     >
-      {/* Inner motion element: slide-up animation only, no positional transform */}
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -31,15 +28,19 @@ export default function BottomNav({ current, onChange }) {
       >
         <div className="flex justify-around items-center">
           {TABS.map((tab) => {
-            const active = current === tab.id
+            const active   = current === tab.id
+            // Music & Gallery dikunci sampai kado dibuka
+            const locked   = tab.id !== 'home' && !giftOpened
+
             return (
               <motion.button
                 key={tab.id}
-                onClick={() => onChange(tab.id)}
-                whileTap={{ scale: 0.87 }}
+                onClick={() => !locked && onChange(tab.id)}
+                whileTap={locked ? {} : { scale: 0.87 }}
                 className={`
-                  flex flex-col items-center gap-1 px-5 py-1.5 rounded-xl transition-all duration-200
+                  relative flex flex-col items-center gap-1 px-5 py-1.5 rounded-xl transition-all duration-200
                   ${active ? 'bg-pink-100' : ''}
+                  ${locked ? 'opacity-35 cursor-not-allowed' : ''}
                 `}
               >
                 <motion.span
@@ -47,13 +48,9 @@ export default function BottomNav({ current, onChange }) {
                   animate={active ? { scale: [1, 1.25, 1] } : { scale: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {tab.emoji}
+                  {locked ? '🔒' : tab.emoji}
                 </motion.span>
-                <span
-                  className={`text-[11px] font-bold tracking-wide ${
-                    active ? 'text-pink-500' : 'text-gray-400'
-                  }`}
-                >
+                <span className={`text-[11px] font-bold tracking-wide ${active ? 'text-pink-500' : 'text-gray-400'}`}>
                   {tab.label}
                 </span>
               </motion.button>
