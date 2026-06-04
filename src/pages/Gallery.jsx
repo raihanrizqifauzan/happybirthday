@@ -4,23 +4,33 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const PHOTOS = [
   {
-    src: '/assets/gallery/photo-1.jpg',
-    caption: 'Ini dia yang bikin aku susah fokus 😭',
+    src: '/assets/gallery/IMG-20260503-WA0002.jpg',
+    caption: 'cantik. titik.',
     color: 'from-pink-200 via-rose-100 to-pink-50',
   },
   {
-    src: '/assets/gallery/photo-2.jpg',
-    caption: 'Senyum kayak gini tuh harusnya ilegal wkwk 😅',
+    src: '/assets/gallery/IMG-20260507-WA0015.jpg',
+    caption: 'ya gini lah orangnya.',
     color: 'from-purple-200 via-violet-100 to-purple-50',
   },
   {
-    src: '/assets/gallery/photo-3.jpg',
-    caption: 'Aduh ni geuyiis kann 😅',
+    src: '/assets/gallery/ssstik.io_1780389396799.webp',
+    caption: 'nggak ada caption yang cukup.',
     color: 'from-blue-200 via-sky-100 to-blue-50',
+  },
+  {
+    src: '/assets/gallery/ssstik.io_1780389403663.webp',
+    caption: 'selalu bikin aku diem sebentar.',
+    color: 'from-green-200 via-emerald-100 to-green-50',
+  },
+  {
+    src: '/assets/gallery/ssstik.io_1780389407713.webp',
+    caption: 'favorit. sudah.',
+    color: 'from-yellow-200 via-amber-100 to-yellow-50',
   },
 ]
 
-const ROTATIONS = [-2, 1.5, -1]
+const ROTATIONS = [-2, 1.5, -1, 2, -1.5]
 
 export default function Gallery() {
   const [idx, setIdx]         = useState(0)
@@ -101,8 +111,8 @@ export default function Gallery() {
               </div>
 
               {/* Caption area */}
-              <div className="absolute bottom-3 left-4 right-4 text-center">
-                <p className="text-gray-600 text-xs font-semibold leading-snug">{photo.caption}</p>
+              <div className="absolute bottom-3 left-4 right-4 flex items-center justify-center">
+                <p className="text-gray-600 text-xs font-semibold leading-snug text-center w-full">{photo.caption}</p>
               </div>
 
               {/* Tape decoration */}
