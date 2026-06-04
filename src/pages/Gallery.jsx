@@ -5,27 +5,27 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 const PHOTOS = [
   {
     src: '/assets/gallery/IMG-20260503-WA0002.jpg',
-    caption: 'cantik. titik.',
+    caption: 'senyum kaya gini tuh harusnya ilegal hehehe 🫠',
     color: 'from-pink-200 via-rose-100 to-pink-50',
   },
   {
     src: '/assets/gallery/IMG-20260507-WA0015.jpg',
-    caption: 'ya gini lah orangnya.',
+    caption: 'kenapa bisa secantik ini sih 🤨📸',
     color: 'from-purple-200 via-violet-100 to-purple-50',
   },
   {
-    src: '/assets/gallery/ssstik.io_1780389396799.webp',
-    caption: 'nggak ada caption yang cukup.',
+    src: '/assets/gallery/ssstik.io_1780389407713.webp',
+    caption: 'susah nggak suka. serius. 🫡',
     color: 'from-blue-200 via-sky-100 to-blue-50',
   },
   {
     src: '/assets/gallery/ssstik.io_1780389403663.webp',
-    caption: 'selalu bikin aku diem sebentar.',
+    caption: 'ini mah serius cantik banget 💀',
     color: 'from-green-200 via-emerald-100 to-green-50',
   },
   {
-    src: '/assets/gallery/ssstik.io_1780389407713.webp',
-    caption: 'favorit. sudah.',
+    src: '/assets/gallery/ssstik.io_1780389396799.webp',
+    caption: 'yang ini favorit, nggak bisa debat 🔒',
     color: 'from-yellow-200 via-amber-100 to-yellow-50',
   },
 ]
@@ -179,7 +179,7 @@ export default function Gallery() {
         transition={{ delay: 0.4 }}
       >
         <p className="text-center text-gray-600 text-sm leading-relaxed">
-          LDR emang nyebelin, tapi liat foto kamu kayak gini langsung makin kangen. Terus gimana dong? 😭
+          Jarak yang jauh emang nyebelin, tapi liat foto kamu kayak gini langsung makin kangen. Terus gimana dong? 😭
           <br /><span className="text-pink-400 font-bold">Pokoknya cepet ketemu ya!</span>
         </p>
       </motion.div>

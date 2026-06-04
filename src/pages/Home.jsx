@@ -60,7 +60,7 @@ const CARDS = [
   },
   {
     emoji: '✈️',
-    title: 'Soal LDR ini...',
+    title: 'Soal Jarak kita yang jauh ini...',
     body: 'Berat sih, bohong kalau bilang enggak. Tapi liat kamu happy aja udah cukup kok. Ntar juga ketemu lagi — ditunggu ya, jangan kemana-mana dulu wkwkwk.',
   },
 ]
